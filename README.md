@@ -2,7 +2,7 @@
 
 [Advent of Code 2024](https://adventofcode.com/2024) solved in Go 
 
-- [ ] Day 1
+- [x] Day 1
 - [ ] Day 2
 - [ ] Day 3
 - [ ] Day 4
