@@ -1,18 +1,16 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 	"math"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
 
 func main() {
-	left, right := readInput("input.txt")
+	left, right := getLists("input.txt")
 	solvePartOne(left, right)
 	solvePartTwo(left, right)
 	solvePartTwoWithMap(left, right)
@@ -85,19 +83,15 @@ func getDistances(left, right []int) []int {
 	return distances
 }
 
-func readInput(fileName string) ([]int, []int) {
-	file, err := os.Open(fileName)
-	if err != nil {
-		log.Fatal(err)
-	}
+func getLists(fileName string) ([]int, []int) {
+	lines := readInput(fileName)
 
 	var listOne, listTwo []int
 
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		fields := strings.Fields(scanner.Text())
+	for _, line := range lines {
+		fields := strings.Fields(line)
 		if len(fields) != 2 {
-			log.Fatalf("Corrupt line: %q", scanner.Text())
+			log.Fatalf("Corrupt line: %q", line)
 		}
 
 		valueOne, err := strconv.Atoi(fields[0])
@@ -112,10 +106,6 @@ func readInput(fileName string) ([]int, []int) {
 
 		listOne = append(listOne, valueOne)
 		listTwo = append(listTwo, valueTwo)
-	}
-
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
 	}
 
 	return listOne, listTwo
