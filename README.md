@@ -3,7 +3,7 @@
 [Advent of Code 2024](https://adventofcode.com/2024) solved in Go 
 
 - [x] Day 1
-- [ ] Day 2
+- [x] Day 2
 - [ ] Day 3
 - [ ] Day 4
 - [ ] Day 5
