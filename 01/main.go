@@ -84,7 +84,10 @@ func getDistances(left, right []int) []int {
 }
 
 func getLists(fileName string) ([]int, []int) {
-	lines := readInput(fileName)
+	lines, err := readInput(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var listOne, listTwo []int
 

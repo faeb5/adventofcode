@@ -2,14 +2,13 @@ package main
 
 import (
 	"bufio"
-	"log"
 	"os"
 )
 
-func readInput(fileName string) []string {
+func readInput(fileName string) ([]string, error) {
 	file, err := os.Open(fileName)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	var result []string
@@ -20,8 +19,8 @@ func readInput(fileName string) []string {
 	}
 
 	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
-	return result
+	return result, nil
 }
