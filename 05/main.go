@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	input, err := parseInput()
+	input, err := getInput()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18,6 +18,5 @@ func solvePartOne(input Input) {
 	sum := 0
 
 	// TODO solve the problem
-
 	fmt.Println("The solution to part one is:", sum)
 }
