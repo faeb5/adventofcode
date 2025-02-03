@@ -21,7 +21,7 @@ func TestParseInput(t *testing.T) {
 					"42|69": true,
 					"69|42": true,
 				},
-				updates: Updates{
+				updates: []Update{
 					{12, 13, 14},
 					{2, 3, 4},
 				},

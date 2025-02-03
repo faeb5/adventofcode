@@ -15,10 +15,10 @@ import (
 type Rules map[string]bool
 
 // List of updates
-type Updates [][]int
+type Update []int
 type Input struct {
 	rules   Rules
-	updates Updates
+	updates []Update
 }
 
 func getInput() (Input, error) {
@@ -31,7 +31,7 @@ func getInput() (Input, error) {
 
 func parseInput(lines []string) (Input, error) {
 	rules := Rules{}
-	updates := Updates{}
+	updates := []Update{}
 
 	rulesSectionDone := false
 
